@@ -1,0 +1,10 @@
+.coffee {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fffaf0;
+}
+
+.coffee img {
+  width: 300px;
+  margin-top: 20px;
+}

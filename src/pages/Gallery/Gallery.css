@@ -1,0 +1,23 @@
+.gallery-container {
+  padding: 40px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -15px; 
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 15px;
+  background-clip: padding-box;
+}
+
+.photo-placeholder {
+  background-color: yellow;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
