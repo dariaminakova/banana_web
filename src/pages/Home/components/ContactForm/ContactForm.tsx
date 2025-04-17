@@ -1,71 +1,108 @@
-import { useState } from 'react';
-import './ContactForm.css';
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import emailjs from "@emailjs/browser";
+import "./contactForm.css";
+emailjs.init("AypmoJdyVdNFCFbBF");
 
-const ContactForm = () => {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+const validationSchema = Yup.object({
+  name: Yup.string().required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+  message: Yup.string().required("Required"),
+});
 
-  const validate = () => {
-    const newErrors: { [key: string]: string } = {};
-    if (!form.name) newErrors.name = 'Name is required';
-    if (!form.email) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = 'Email is invalid';
-    }
-    if (!form.message) newErrors.message = 'Message is required';
-    return newErrors;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-    } else {
-      alert('Form submitted!');
-      setForm({ name: '', email: '', message: '' });
-      setErrors({});
-    }
-  };
+function ContactForm() {
+  const formik = useFormik({
+    initialValues: { name: "", email: "", message: "" },
+    validationSchema,
+    onSubmit: async (values, { resetForm }) => {
+      await emailjs
+        .send(
+          "gmailService",
+          "contact_template",
+          {
+            name: values.name,
+            email: values.email,
+            message: values.message,
+          },
+          "AypmoJdyVdNFCFbBF",
+        )
+        .then((res) => {
+          console.log(res);
+          resetForm();
+        })
+        .catch((err) => {
+          console.error("FAILED...", err);
+        });
+    },
+  });
 
   return (
-    <section className="contact">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name
-          <input
-            type="text"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-          />
-          {errors.name && <span>{errors.name}</span>}
-        </label>
+    <div className='form-wrapper'>
+      <div className='form-container'>
+        <h2 className='form-title'>Contact Us</h2>
 
-        <label>
-          Email
-          <input
-            type="email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-          />
-          {errors.email && <span>{errors.email}</span>}
-        </label>
+        <form onSubmit={formik.handleSubmit}>
+          <div className='form-group'>
+            <label htmlFor='name' className='form-label'>
+              Name
+            </label>
+            <input
+              type='text'
+              name='name'
+              id='name'
+              className='form-input'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
+            />
+            {formik.touched.name && formik.errors.name && (
+              <span className='form-error'>{formik.errors.name}</span>
+            )}
+          </div>
 
-        <label>
-          Message
-          <textarea
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
-          />
-          {errors.message && <span>{errors.message}</span>}
-        </label>
+          <div className='form-group'>
+            <label htmlFor='email' className='form-label'>
+              Email
+            </label>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              className='form-input'
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
+            />
+            {formik.touched.email && formik.errors.email && (
+              <span className='form-error'>{formik.errors.email}</span>
+            )}
+          </div>
 
-        <button type="submit">Submit</button>
-      </form>
-    </section>
+          <div className='form-group'>
+            <label htmlFor='message' className='form-label'>
+              Message
+            </label>
+            <textarea
+              name='message'
+              id='message'
+              className='form-textarea'
+              rows={4}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.message}
+            />
+            {formik.touched.message && formik.errors.message && (
+              <span className='form-error'>{formik.errors.message}</span>
+            )}
+          </div>
+
+          <button type='submit' className='form-button'>
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
   );
-};
+}
 
 export default ContactForm;

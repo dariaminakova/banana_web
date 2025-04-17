@@ -3,8 +3,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: #4b2c5e;
+  background-image: url('/src/assets/beach\ bg.jpg');
+  background-size: cover;
   color: white;
+  height: 480px;
+
 }
 
 .header a {

@@ -8,5 +8,6 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: Arial, sans-serif;
+  font-family: "Inter";
+  background-color: #fff;
 }

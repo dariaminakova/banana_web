@@ -1,13 +1,16 @@
-import Navbar from './components/Navbar';
-import AppRoutes from './routes/AppRoutes';
-import './App.css';
+import Navbar from "./components/NavBar/Navbar";
+import AppRoutes from "./routes/AppRoutes";
+import { DishProvider } from "./context/DishContext";
+import "./App.css";
 
 function App() {
   return (
-    <div className='app-container'>
-      <Navbar />
-      <AppRoutes />
-    </div>
+    <DishProvider>
+      <div className='app-container'>
+        <Navbar />
+        <AppRoutes />
+      </div>
+    </DishProvider>
   );
 }
 

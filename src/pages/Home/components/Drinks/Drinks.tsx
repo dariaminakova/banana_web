@@ -1,15 +1,17 @@
-import './Drinks.css';
+import { assets } from "../../../../assets/assets";
 
-const Drinks = () => {
+import "./Drinks.css";
+
+function Drinks() {
   return (
-    <section className="section">
-      <h2>Drinks</h2><div className="gallery">
-        <img src="/images/drink1.jpg" alt="Drink 1" />
-        <img src="/images/drink2.jpg" alt="Drink 2" />
-        <img src="/images/drink3.jpg" alt="Drink 3" />
+    <section className='drinks-section'>
+      <h2 className='drinks-title'>Drinks</h2>
+      <div className='drinks-gallery'>
+        {assets.drinks.map((src, i) => (
+          <img key={i} src={src} className={`drink-img img${i + 1}`} />
+        ))}
       </div>
     </section>
   );
-};
-
+}
 export default Drinks;

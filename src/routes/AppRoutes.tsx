@@ -4,9 +4,9 @@ import About from "../pages/About/About";
 import Menu from "../pages/Menu/Menu";
 import Gallery from "../pages/Gallery/Gallery";
 import Contact from "../pages/Contact/Contact";
-import Main from "../pages/Menu/Components/Main";
-import Starters from "../pages/Menu/Components/Starters";
-import Drinks from "../pages/Menu/Components/Drinks";
+import Main from "../pages/Menu/MainMenu";
+import Starters from "../pages/Menu/Starters";
+import Drinks from "../pages/Menu/Drinks";
 
 function AppRoutes() {
   return (

@@ -1,0 +1,57 @@
+.deserts-section {
+  padding: 60px 20px;
+
+  text-align: center;
+  position: relative;
+  background-color: #FFFBE9;
+}
+
+.deserts-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.deserts-gallery {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+.dessert-img {
+  position: absolute;
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.dessert-img:hover {
+  transform: scale(1.05);
+  z-index: 3;
+}
+
+.img1 {
+  top: 30px;
+  left: 100px;
+  transform: rotate(-15deg);
+}
+
+.img2 {
+  top: 80px;
+  left: 280px;
+  transform: rotate(5deg);
+}
+
+.img3 {
+  top: 150px;
+  left: 460px;
+  transform: rotate(-7deg);
+}
+
+.img4 {
+  top: 60px;
+  left: 640px;
+  transform: rotate(12deg);
+}

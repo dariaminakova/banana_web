@@ -1,15 +1,16 @@
-import './CoffeeSection.css';
+import coffeeJar from "../../../../assets/coffee.png";
+import "./CoffeeSection.css";
 
-const CoffeeSection = () => {
+export default function CoffeeSection() {
   return (
-    <section className="coffee">
-      <p>
+    <section className='coffee-container'>
+      <div className='coffee-title'>
         We're excited to announce that we import exceptional coffee varieties
         from some of the finest regions in the world!
-      </p>
-      <img src="/images/coffee.jpg" alt="Illy Coffee" />
+      </div>
+      <div className='coffee-section'>
+        <img src={coffeeJar} alt='Coffee Jar' className='coffee-image' />
+      </div>
     </section>
   );
-};
-
-export default CoffeeSection;
+}

@@ -4,7 +4,8 @@ import './Header.css';
 const Header = () => {
   return (
     <header className="header">
-      <h1 className="logo">Banana Magic</h1>
+     <h2>Welcome to</h2>
+     <h1>Banana Magic</h1>
     </header>
   );
 };
