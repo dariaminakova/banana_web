@@ -1,17 +1,12 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-image: url('/src/assets/beach\ bg.jpg');
-  background-size: cover;
-  color: white;
   height: 480px;
-
+  position: relative;
+  overflow: hidden;
 }
 
-.header a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
+.header img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }

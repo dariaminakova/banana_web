@@ -1,19 +1,72 @@
 .navbar {
-  display: flex;
-  justify-content: center;
   position: sticky;
   top: 0;
-  padding: 1rem;
-  background: #f4f4f4;
+  z-index: 8;
+  height: 60px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+  background-color: white;
+}
+
+.navbar-logo {
+  height: 80px;
+  position: relative;
+  top: 10px;
   z-index: 9;
+  flex-shrink: 0;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 1rem;
 }
 
 .navbar a {
-  margin-right: 1rem;
   text-decoration: none;
-  color: black;
+  color: #3d0075;
 }
 
 .navbar a:hover {
   text-decoration: underline;
+  color: #3d0075;
+}
+
+.navbar-wrapper {
+  position: relative;
+}
+
+.navbar-icon {
+  height: 60px;
+  animation: shake 2.4s infinite alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(-18deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+  0% {
+    transform: rotate(-18deg);
+  }
+}
+
+.navbar-text {
+  position: absolute;
+  top: 32px;
+  right: -4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #40016a;
+  pointer-events: none;
+  white-space: nowrap;
+  text-shadow: 1px 1px 0 white, -1px 1px 0 white, 1px -1px 0 white,
+    -1px -1px 0 white, 0 1px 0 white, 1px 0 0 white, 0 -1px 0 white,
+    -1px 0 0 white;
 }

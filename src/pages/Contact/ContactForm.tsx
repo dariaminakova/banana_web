@@ -5,12 +5,14 @@ import "./contactForm.css";
 emailjs.init("AypmoJdyVdNFCFbBF");
 
 const validationSchema = Yup.object({
-  name: Yup.string().required("Required"),
-  email: Yup.string().email("Invalid email").required("Required"),
-  message: Yup.string().required("Required"),
+  name: Yup.string().required("Name is required field"),
+  email: Yup.string()
+    .email("Please provide valid email")
+    .required("Email is required field"),
+  message: Yup.string().min(1).required("Required"),
 });
 
-function ContactForm() {
+function ContactForm({ customStyles = false }) {
   const formik = useFormik({
     initialValues: { name: "", email: "", message: "" },
     validationSchema,
@@ -31,14 +33,22 @@ function ContactForm() {
           resetForm();
         })
         .catch((err) => {
-          console.error("FAILED...", err);
+          console.error("Failed with error...", err);
         });
     },
   });
 
   return (
-    <div className='form-wrapper'>
-      <div className='form-container'>
+    <div
+      className='form-wrapper'
+      style={{ minHeight: customStyles ? "80vh" : "" }}
+    >
+      <div
+        className='form-container'
+        style={{
+          boxShadow: customStyles ? "0 0 20px rgba(0, 0, 0, 0.1)" : "none",
+        }}
+      >
         <h2 className='form-title'>Contact Us</h2>
 
         <form onSubmit={formik.handleSubmit}>
@@ -90,6 +100,7 @@ function ContactForm() {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.message}
+              placeholder='Type your message...'
             />
             {formik.touched.message && formik.errors.message && (
               <span className='form-error'>{formik.errors.message}</span>
@@ -97,7 +108,7 @@ function ContactForm() {
           </div>
 
           <button type='submit' className='form-button'>
-            Send
+            Submit
           </button>
         </form>
       </div>

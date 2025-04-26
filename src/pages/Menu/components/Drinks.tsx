@@ -1,6 +1,6 @@
-import { useDishContext } from "../../context/hook-dish-context";
-import { drinkDishes } from "./menuData";
-import "./Menu.css";
+import { useDishContext } from "../../../context/hook-dish-context";
+import { drinkDishes } from "../menuData";
+import "../Menu.css";
 
 const Drinks = () => {
   const { selectedDish, setSelectedDish } = useDishContext();

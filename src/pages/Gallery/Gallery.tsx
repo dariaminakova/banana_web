@@ -1,7 +1,6 @@
-import Masonry from 'react-masonry-css';
-import './Gallery.css';
-
-const photos = Array.from({ length: 17 });
+import { assets } from "../../assets/assets";
+import Masonry from "react-masonry-css";
+import "./Gallery.css";
 
 const Gallery = () => {
   const breakpointColumnsObj = {
@@ -11,20 +10,28 @@ const Gallery = () => {
     500: 1,
   };
 
+  const images = [...assets.menu, ...assets.drinks, ...assets.desserts];
+
   return (
-    <div className="gallery-container">
-      <h2>Gallery</h2>
+    <div className='gallery-container'>
+      <span className='gallery_title'>Gallery</span>
       <Masonry
         breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
+        className='my-masonry-grid'
+        columnClassName='my-masonry-grid_column'
       >
-        {photos.map((_, index) => (
-          <div
-            key={index}
-            className="photo-placeholder"
-            style={{ height: `${120 + (index % 5) * 30}px` }}
-          />
+        {images.map((imgSrc, index) => (
+          <div key={index} className='photo-placeholder'>
+            <img
+              src={imgSrc}
+              alt={`gallery-img-${index}`}
+              style={{
+                width: "100%",
+                borderRadius: "8px",
+                display: "block",
+              }}
+            />
+          </div>
         ))}
       </Masonry>
     </div>

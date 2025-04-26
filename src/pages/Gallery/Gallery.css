@@ -1,23 +1,36 @@
 .gallery-container {
   padding: 40px;
-  font-family: sans-serif;
   text-align: center;
 }
-
+.gallery_title {
+  font-size: 28px;
+  color: #40016a;
+}
 .my-masonry-grid {
+  margin-top: 24px;
   display: flex;
-  margin-left: -15px; 
   width: auto;
 }
 .my-masonry-grid_column {
   padding-left: 15px;
   background-clip: padding-box;
 }
-
 .photo-placeholder {
-  background-color: yellow;
   margin-bottom: 15px;
   border-radius: 10px;
-  width: 100%;
+  overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.photo-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.photo-placeholder img:hover {
+  transform: scale(1.03);
 }

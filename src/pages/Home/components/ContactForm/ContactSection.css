@@ -1,0 +1,72 @@
+.contact-section {
+  text-align: start;
+  padding: 4rem 1rem;
+}
+
+.contact-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #40016A;
+  text-align: center;
+  width: 100%;
+}
+
+.contact-card {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 2px solid #40016A;
+  border-radius: 16px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-button {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #40016A;
+  border-radius: 30px;
+  background-color: transparent;
+  color: #40016A;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-button:hover {
+  background-color: #f6f0fa;
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  align-items:flex-end;
+}
+
+.mail-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.contact-text {
+  text-align: left;
+}
+
+.contact-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.contact-email {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #333;
+}

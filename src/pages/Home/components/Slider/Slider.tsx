@@ -1,4 +1,4 @@
-import WorkSlider from "../../../../components/Sider/WorkSlider";
+import WorkSlider from "../../../../components/Slider/WorkSlider";
 import "../Slider/Slider.css";
 const Slider = () => {
   return (

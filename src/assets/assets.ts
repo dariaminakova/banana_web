@@ -14,9 +14,15 @@ import desert4 from "./asset-desert4.jpg";
 export { default as step1 } from "./image-step1.jpg";
 export { default as step2 } from "./image-step2.jpg";
 export { default as step3 } from "./image-step3.jpg";
+export { default as mailIcon } from "./svg/mail-icon.svg";
+export { default as logoLeft } from "./svg/logo-banana.svg";
+export { default as logoRight } from "./svg/banana-logo-right.svg";
+export { default as banner } from "./hero.jpg";
+export { default as wave } from "./svg/wave.svg";
+export { default as about } from "./about-img.jpg";
 
 export const assets = {
   menu: [menu1, menu2, menu3, menu4, menu5],
   drinks: [drink1, drink2, drink3, drink4],
-  desserts: [desert1, desert2, desert3, desert4],
+  desserts: [desert1, desert2, desert3, desert1, desert4],
 };

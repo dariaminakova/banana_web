@@ -10,6 +10,9 @@ function App() {
         <Navbar />
         <AppRoutes />
       </div>
+      <footer className='about-footer'>
+        <div className='info-footer'>© 2024 Banana Magic</div>
+      </footer>
     </DishProvider>
   );
 }

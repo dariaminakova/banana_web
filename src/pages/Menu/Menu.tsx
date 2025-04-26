@@ -23,7 +23,7 @@ const Menu = () => {
   return (
     <div className='menu-wrapper'>
       <div className='menu-left'>
-        <h2 className='menu-title'>Menu</h2>
+        <span className='menu-title'>Menu</span>
         <div className='menu-tabs'>
           {tabs.map((tab) => (
             <NavLink

@@ -1,11 +1,10 @@
-
-import './Header.css';
+import { banner } from "../../../../assets/assets";
+import "./Header.css";
 
 const Header = () => {
   return (
-    <header className="header">
-     <h2>Welcome to</h2>
-     <h1>Banana Magic</h1>
+    <header className='header'>
+      <img src={banner} alt='' />
     </header>
   );
 };

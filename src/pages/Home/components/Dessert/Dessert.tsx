@@ -4,14 +4,14 @@ import "./Dessert.css";
 
 function Dessert() {
   return (
-    <section className='dessert-section'>
-      <h2 className='dessert-title'>Our Dessert</h2>
+    <div className='dessert-section'>
+      <span className='dessert-title'>Our Dessert</span>
       <div className='dessert-gallery'>
       {assets.desserts.map((src, i) => (
           <img key={i} src={src} className={`dessert-img img${i + 1}`} />
         ))}
       </div>
-    </section>
+    </div>
   );
 }
 export default Dessert;

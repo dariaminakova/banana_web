@@ -7,20 +7,17 @@ import "./WorkSlider.css";
 const slides = [
   {
     id: 1,
-    title: "Picking a bunch of bananas",
-    subtitle: "from a palm tree",
+    title: "Picking a bunch of bananas from a palm tree",
     img: step1,
   },
   {
     id: 2,
-    title: "Delivering bananas to the market",
-    subtitle: "super fresh and fast",
+    title: "Delivering bananas to the market super fresh and fast",
     img: step2,
   },
   {
     id: 3,
-    title: "Making banana desserts",
-    subtitle: "with love and care",
+    title: "Making banana desserts with love and care",
     img: step3,
   },
 ];
@@ -28,7 +25,7 @@ const slides = [
 export default function WorkSlider() {
   return (
     <div className='work-slider-wrapper'>
-      <h2 className='work-title'>How do we work?</h2>
+      <div className='work-title'>How do we work?</div>
       <div className='swiper-container-relative'>
         <Swiper
           modules={[Pagination]}
@@ -46,11 +43,9 @@ export default function WorkSlider() {
                   <img src={slide.img} className='circle-placeholder' />
                 </div>
                 <div className='slide-text'>
-                  <h3>{slide.id}.</h3>
+                  <div className='slide_id'>{slide.id}.</div>
                   <p>
                     <strong>{slide.title}</strong>
-                    <br />
-                    {slide.subtitle}
                   </p>
                 </div>
               </div>
